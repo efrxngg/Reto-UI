@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID | Usuarios</title>
+    <link rel="shortcut icon" href="http://www.iguanadigital.com.ec/images/Logo/nuevo-logo-iguana-digital-06-06.png" type="image/x-icon">
+    <!-- Links -->
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <!-- Css -->
+    <link rel="stylesheet" href="/css/index.css">
+
+</head>
+<body>
+    
+    <!-- start modals -->
+    <div class="modal" tabindex="-1" id="modal-delete">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Modal body text goes here.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- end modals -->
+
+    <!-- start header -->
+    <header class="fixed-top  header-transparent ">
+        <nav class="navbar">
+            <div class="container-fluid">
+              <a class="navbar-brand"></a>
+              <form class="d-flex" role="search">
+                <input class="form-control me-2" type="text" placeholder="Buscar" aria-label="Search" id="busqueda">
+                <button class="btn btn-outline-primary" type="reset" onclick="getDataFormSeach()">Buscar</button>
+              </form>
+              
+            </div>
+          </nav>
+    </header>
+    <!-- end header -->
+
+    <!-- start sidebar -->
+    <div class="container-fluid m-icon">
+        <div class="row flex-nowrap">
+            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                    <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                        <span class="fs-5 d-none d-sm-inline">
+                            <img src="http://www.iguanadigital.com.ec/images/Logo/iguana-digital-logo_mesa-de-trabajo-1-copia.png" alt="" width="170">
+                        </span>
+                    </a>
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle px-0" href="./html/home.html">
+                                <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Inicio</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+                                <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Administracion</span></a>
+                            <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
+                                <li class="w-100">
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 1</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                                <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Seguridad</span> </a>
+                                <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
+                                <li class="w-100">
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 1</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 2</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 3</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 4</a>
+                                </li>
+                                <li></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <hr>
+                    <div class="dropdown pb-4">
+                        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
+                            <span class="d-none d-sm-inline mx-1">User</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                            <li><a class="dropdown-item" href="#">New project...</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Sign out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col py-3">
+                <!-- start contenido -->
+
+                <div class="container header-contenido">
+                    <nav class="navbar">
+                        <div class="container-fluid">
+
+                            <!-- start create-user-form -->
+                            <a class="navbar-brand"><h1>Usuarios</h1></a>
+                            <a href="" class="btn btn-dark" type="button" data-bs-toggle="modal" data-bs-target="#form-create" data-bs-dismiss="modal">
+                                Crear Usuario
+                                <i class="bi bi-plus"></i>
+                            </a>
+                            
+                            <!-- Modal -->
+                            <div class="modal fade" id="form-create" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Crear Usuario</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <!-- start form-create -->
+                                        <form method="post">
+                                            <label for="">Nombre Completo</label>
+                                            <input type="text" name="crear-name" id="crear-name" class="form-control" >
+                                            
+                                            <label for="">Correo Electronico</label>
+                                            <input type="email" name="crear-email" id="crear-email" class="form-control" >
+
+                                            <label for="">Contraseña</label>
+                                            <input type="password" name="crear-password" id="crear-password" class="form-control" >
+
+                                            <label for="">Estado</label>
+                                            <input type="text" name="crear-estado" id="crear-estado" class="form-control" value="ACTIVO" >
+
+                    
+                                            <br>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                                <button type="button" class="btn btn-primary" onclick="createUser()" data-bs-dismiss="modal">Agregar</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    
+                                </div>
+                                </div>
+                            </div>
+                            <!-- end create-user-form -->
+
+                            
+
+                        </div>
+                      </nav>
+                    <hr>
+
+                    <!-- start tabla -->
+                    <div class="container mt-4 shadow-lg p-3 mb-5 bg-body rounded contenedor-tabla table-responsive">
+
+                        <!-- start tabla botones -->
+                        <div class="container tabla-botones">
+                            <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                <button type="button" class="btn btn-success">
+                                    CSV
+                                </button>
+                                <button type="button" class="btn btn-success">
+                                    Excel
+                                </button>
+                                <button type="button" class="btn btn-success">
+                                    PDF
+                                </button>
+                              </div>
+                        </div>
+                        <!-- end tabla botones -->
+
+
+                        <table class="table table-hover ">
+                        <thead>
+                            <tr class="table-active table-secondary">
+                            <th scope="col">Id</th>
+                            <th scope="col">Usuario</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Password</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Accion</th>
+
+
+
+                            </tr>
+                        </thead>
+                        <tbody id="respuesta">
+                            
+
+                        </tbody>
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Eliminar Usuario</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        ¿Estas Seguro que deseas eliminar este Usuario?
+                                    </div>
+                                    <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                    <button type="button" class="btn btn-danger" onclick="deleteUserById()" data-bs-dismiss="modal">Eliminar</button>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+
+                            <div class="modal fade" id="form-edit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Editar Usuarios</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+    
+                                            <!-- Form Update -->
+    
+                                            <form>
+                                                <label for="">Nombre</label>
+                                                <input type="text" name="edit-nombre" id="edit-nombre" class="form-control">
+                                                <label for="">Correo electronico</label>
+                                                <input type="text" name="edit-nombre" id="edit-email" class="form-control" >
+                                                <label for="">Contraseña</label>
+                                                <input type="text" name="edit-nombre" id="edit-password" class="form-control">
+                                                <label for="">Estado</label>
+                                                <input type="text" name="edit-nombre" id="edit-estado" class="form-control">
+                                                
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                            <button type="button" class="btn btn-primary" onclick="updateUserById()" data-bs-dismiss="modal">Guardar Cambios</button>
+                                                
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </table>
+                    </div>
+
+                                <!-- end edit -->
+                    <!-- end tabla -->
+                </div>
+                
+                <!-- end contenido -->
+            </div>
+        </div>
+    </div>
+    <!-- end sidebar -->
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="/js/CrudUsuario.js"></script>
+</body>
+</html>
